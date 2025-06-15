@@ -11,6 +11,10 @@
         <option value="$PROJECT_DIR$/aom-admin/pom.xml" />
         <option value="$PROJECT_DIR$/aom-message/pom.xml" />
         <option value="$PROJECT_DIR$/aom-common/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-lesson/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-courses/pom.xml" />
+        <option value="$PROJECT_DIR$/mettings/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-mettings/pom.xml" />
       </list>
     </option>
   </component>

@@ -21,8 +21,12 @@ public class GatewayConfig {
                 .route("aom-message", r -> r
                         .path("/aommessage/**")
                         .uri("http://localhost:18112"))
-
-                // 路由2: 其他所有路径转发到18111端口
+                .route("aom-courses", r -> r
+                        .path("/aomcourses/**")
+                        .uri("http://localhost:18113"))
+                .route("aom-meetings", r -> r
+                        .path("/mettings/**")
+                        .uri("http://localhost:18114"))
                 .route("aom-admin", r -> r
                         .path("/**")
                         .uri("http://localhost:18111"))

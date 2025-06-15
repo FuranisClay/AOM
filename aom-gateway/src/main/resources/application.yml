@@ -9,19 +9,33 @@ spring:
       globalcors:
         enabled: false
       routes:
-        # 商品服务路由 - 优先级高
+        # 路由1: aom-message 服务 - 优先级高
         - id: aom-message
           uri: http://localhost:18112
           predicates:
             - Path=/aommessage/**
           order: 1
 
-        # 默认服务路由 - 优先级低
+        # 路由2: aom-courses 服务
+        - id: aom-courses
+          uri: http://localhost:18113
+          predicates:
+            - Path=/aomcourses/**
+          order: 2
+
+        # 路由3: aom-meetings 服务（注意修正路径拼写 mettings -> meetings）
+        - id: aom-meetings
+          uri: http://localhost:18114
+          predicates:
+            - Path=/meetings/**
+          order: 3
+
+        # 路由4: aom-admin 服务 - 默认路由，优先级最低
         - id: aom-admin
           uri: http://localhost:18111
           predicates:
             - Path=/**
-          order: 2
+          order: 4
 
 
 # 管理端点配置

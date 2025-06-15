@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aom-message" />
         <module name="aom-gateway" />
         <module name="aom-admin" />
+        <module name="aom-mettings" />
+        <module name="aom-message" />
+        <module name="aom-courses" />
         <module name="aom-common" />
         <module name="renren-generator" />
       </profile>
@@ -22,8 +24,10 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aom-admin" options="-parameters" />
       <module name="aom-common" options="-parameters" />
+      <module name="aom-courses" options="-parameters" />
       <module name="aom-gateway" options="-parameters" />
       <module name="aom-message" options="-parameters" />
+      <module name="aom-mettings" options="-parameters" />
       <module name="furan-gateway" options="-parameters" />
       <module name="renren-generator" options="-parameters" />
     </option>
