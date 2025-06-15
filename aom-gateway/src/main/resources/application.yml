@@ -1,0 +1,41 @@
+server:
+  port: 18110
+
+spring:
+  application:
+    name: aom-gateway
+  cloud:
+    gateway:
+      globalcors:
+        enabled: false
+      routes:
+        # 商品服务路由 - 优先级高
+        - id: aom-message
+          uri: http://localhost:18112
+          predicates:
+            - Path=/message/**
+          order: 1
+
+        # 默认服务路由 - 优先级低
+        - id: aom-admin
+          uri: http://localhost:18111
+          predicates:
+            - Path=/**
+          order: 2
+
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+
+# 日志配置
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG

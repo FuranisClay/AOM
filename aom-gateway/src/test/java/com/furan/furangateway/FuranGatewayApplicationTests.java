@@ -1,0 +1,13 @@
+package com.furan.furangateway;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class FuranGatewayApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
