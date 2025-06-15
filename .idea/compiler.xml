@@ -10,6 +10,7 @@
         <module name="aom-message" />
         <module name="aom-gateway" />
         <module name="aom-admin" />
+        <module name="aom-common" />
         <module name="renren-generator" />
       </profile>
     </annotationProcessing>
@@ -20,6 +21,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aom-admin" options="-parameters" />
+      <module name="aom-common" options="-parameters" />
       <module name="aom-gateway" options="-parameters" />
       <module name="aom-message" options="-parameters" />
       <module name="furan-gateway" options="-parameters" />

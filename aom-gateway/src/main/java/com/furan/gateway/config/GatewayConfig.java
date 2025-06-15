@@ -19,7 +19,7 @@ public class GatewayConfig {
         return builder.routes()
                 // 路由1: 所有包含/message的路径转发到18112端口
                 .route("aom-message", r -> r
-                        .path("/message/**")
+                        .path("/aommessage/**")
                         .uri("http://localhost:18112"))
 
                 // 路由2: 其他所有路径转发到18111端口

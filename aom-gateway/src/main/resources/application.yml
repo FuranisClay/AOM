@@ -13,7 +13,7 @@ spring:
         - id: aom-message
           uri: http://localhost:18112
           predicates:
-            - Path=/message/**
+            - Path=/aommessage/**
           order: 1
 
         # 默认服务路由 - 优先级低

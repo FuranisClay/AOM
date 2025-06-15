@@ -80,6 +80,16 @@
 			<version>1.2.23</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.renren</groupId>
+			<artifactId>aom-admin</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.furan</groupId>
+			<artifactId>aom-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
