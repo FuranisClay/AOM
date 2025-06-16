@@ -33,7 +33,8 @@ public class NewsServiceImpl extends ServiceImpl<NewsDao, NewsEntity> implements
         }else{
             page = this.page(
                     new Query<NewsEntity>().getPage(params),
-                    new QueryWrapper<NewsEntity>().like(StringUtils.isNotBlank(key),"title", key)
+                    new QueryWrapper<NewsEntity>().
+                            like(StringUtils.isNotBlank(key),"title", key)
             );
             redissonService.setValue(cacheKey, page,1000);
             return new PageUtils(page);
