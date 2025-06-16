@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.furan.aomcourses.dao.CoursesDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.furan.aomcourses.entity.CoursesEntity" id="coursesMap">
+        <result property="id" column="id"/>
+        <result property="courseName" column="course_name"/>
+        <result property="courseCover" column="course_cover"/>
+        <result property="courseDescription" column="course_description"/>
+        <result property="courseSort" column="course_sort"/>
+        <result property="courseVideo" column="course_video"/>
+        <result property="author" column="author"/>
+        <result property="status" column="status"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+
+</mapper>
