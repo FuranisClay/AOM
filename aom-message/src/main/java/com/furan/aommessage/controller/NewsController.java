@@ -87,4 +87,22 @@ public class NewsController {
         return R.ok();
     }
 
+    @RequestMapping("/listpending")
+    @RequiresPermissions("aommessage:courses:list")
+    public R judge(@RequestParam  Map<String, Object> params){
+        PageUtils page = newsService.listJPending(params);
+
+        return R.ok().put("page", page);
+    }
+
+
+    @RequestMapping("/listbyuserid")
+    @RequiresPermissions("aommessage:news:list")
+    public R listByUserId(@RequestParam Map<String, Object> params){
+        PageUtils page = newsService.queryPageByUserId(params);
+
+        return R.ok().put("page", page);
+    }
+
+
 }

@@ -21,7 +21,7 @@ import java.util.List;
  */
 @Mapper
 public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {
-	
+
 	/**
 	 * 根据用户ID，获取角色ID列表
 	 */
@@ -32,4 +32,6 @@ public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {
 	 * 根据角色ID数组，批量删除
 	 */
 	int deleteBatch(Long[] roleIds);
+
+	Long queryRoleById(Long userId);
 }

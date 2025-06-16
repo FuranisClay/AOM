@@ -12,9 +12,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/aom-admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://39.105.179.191:13306/aom-admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-    password: chenyinan
+    password: 147258
     druid:
       initial-size: 10
       max-active: 100
@@ -63,8 +63,8 @@ spring:
 redis:
   sdk:
     config:
-      host: 127.0.0.1
-      port: 6379
+      host: 39.105.179.191
+      port: 16379
       pool-size: 10
       min-idle-size: 5
       idle-timeout: 30000

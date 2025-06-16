@@ -41,4 +41,42 @@ public class NewsServiceImpl extends ServiceImpl<NewsDao, NewsEntity> implements
         }
     }
 
+    @Override
+    public PageUtils listJPending(Map<String, Object> params) {
+//        String key = (String)params.get("key");
+        String key = "pending";
+//        params.get("status");
+        String cacheKey = "MESSAGEPENDING" +  key;
+        IPage<NewsEntity> page = redissonService.getValue(cacheKey);
+        if (page != null) {
+            return new PageUtils(page);
+        }else{
+            page = this.page(
+                    new Query<NewsEntity>().getPage(params),
+                    new QueryWrapper<NewsEntity>().
+                    eq(StringUtils.isNotBlank(key), "status", key)
+            );
+            redissonService.setValue(cacheKey, page,1000);
+            return new PageUtils(page);
+        }
+    }
+
+    @Override
+    public PageUtils queryPageByUserId(Map<String, Object> params) {
+        String key = (String)params.get("userId");
+        String cacheKey = "MESSAGEQUERYBYUSERID" +  key;
+        IPage<NewsEntity> page = redissonService.getValue(cacheKey);
+        if (page != null) {
+            return new PageUtils(page);
+        }else{
+            page = this.page(
+                    new Query<NewsEntity>().getPage(params),
+                    new QueryWrapper<NewsEntity>().
+                            eq(StringUtils.isNotBlank(key), "author_id", key)
+            );
+            redissonService.setValue(cacheKey, page,1000);
+            return new PageUtils(page);
+        }
+    }
+
 }
