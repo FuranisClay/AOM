@@ -16,5 +16,9 @@ import java.util.Map;
 public interface CoursesService extends IService<CoursesEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    PageUtils listJPending(Map<String, Object> params);
+
+    PageUtils queryPageByUserId(Map<String, Object> params);
 }
 
