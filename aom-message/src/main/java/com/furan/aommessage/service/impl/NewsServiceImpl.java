@@ -56,7 +56,7 @@ public class NewsServiceImpl extends ServiceImpl<NewsDao, NewsEntity> implements
                     new QueryWrapper<NewsEntity>().
                     eq(StringUtils.isNotBlank(key), "status", key)
             );
-            redissonService.setValue(cacheKey, page,1000);
+            redissonService.setValue(cacheKey, page,20000);
             return new PageUtils(page);
         }
     }
@@ -78,5 +78,4 @@ public class NewsServiceImpl extends ServiceImpl<NewsDao, NewsEntity> implements
             return new PageUtils(page);
         }
     }
-
 }
