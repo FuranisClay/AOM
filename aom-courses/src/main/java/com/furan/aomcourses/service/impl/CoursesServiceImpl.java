@@ -39,7 +39,6 @@ public class CoursesServiceImpl extends ServiceImpl<CoursesDao, CoursesEntity> i
                 new Query<CoursesEntity>().getPage(params),
                 wrapper
         );
-
         return new PageUtils(page);
     }
 
@@ -61,28 +60,52 @@ public class CoursesServiceImpl extends ServiceImpl<CoursesDao, CoursesEntity> i
 
 
 
+    /**
+     * 按用户ID查询课程，并支持课程名、作者名和排序的任意组合筛选
+     */
     @Override
     public PageUtils queryPageByUserId(Map<String, Object> params) {
-        String key = (String) params.get("userId");
-        String cacheKey = "COURSEQUERYBYUSERID" + key;
+        // 从参数中获取所有筛选条件
+        String userId = (String) params.get("userId");
+        String key = (String) params.get("key"); // 对应前端的 courseName
+        String author = (String) params.get("author"); // 从参数中获取作者名
+        String sort = (String) params.get("sort");
+
+        // 构造一个更具体的缓存键，以避免不同查询条件返回相同缓存
+        String cacheKey = "COURSEQUERYBYUSERID_" + userId +
+                "_KEY_" + (key != null ? key : "") +
+                "_AUTHOR_" + (author != null ? author : "") + // 新增
+                "_SORT_" + (sort != null ? sort : "") +
+                "_PAGE_" + params.get("page") +
+                "_LIMIT_" + params.get("limit");
+
         IPage<CoursesEntity> page = redissonService.getValue(cacheKey);
+
         if (page != null) {
             return new PageUtils(page);
         }
+        // 构造查询条件
+        QueryWrapper<CoursesEntity> wrapper = new QueryWrapper<>();
+        // 核心条件：按用户ID筛选
+        wrapper.eq(StringUtils.isNotBlank(userId), "user_id", userId);
+        // 附加条件：按课程名模糊搜索
+        wrapper.like(StringUtils.isNotBlank(key), "course_name", key);
+        // 新增：按作者名模糊搜索
+        wrapper.like(StringUtils.isNotBlank(author), "author", author);
+        // 附加条件：按排序字段排序
+        if ("asc".equals(sort)) {
+            wrapper.orderByAsc("course_sort");
+        } else if ("desc".equals(sort)) {
+            wrapper.orderByDesc("course_sort");
+        }
+
         page = this.page(
                 new Query<CoursesEntity>().getPage(params),
-                new QueryWrapper<CoursesEntity>()
-                        .eq(StringUtils.isNotBlank(key), "user_id", key)
+                wrapper
         );
 
         redissonService.setValue(cacheKey, page, 1000);
         return new PageUtils(page);
     }
-
-
-
-
-
-
 
 }
