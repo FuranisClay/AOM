@@ -4,20 +4,13 @@ import com.furan.aomcommon.service.impl.RedissonServiceImpl;
 import com.furan.mettings.dao.MeetingsDao;
 import com.furan.mettings.entity.MeetingsEntity;
 import com.furan.mettings.service.MeetingsService;
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.Query;
-import io.renren.common.utils.R;
-import io.renren.modules.api.SysUserApiService;
-import io.renren.modules.sys.service.SysUserRoleService;
-import io.renren.modules.sys.service.SysUserService;
+import com.furan.common.utils.PageUtils;
+import com.furan.common.utils.Query;
+import com.furan.modules.api.SysUserApiService;
 import org.apache.commons.lang.StringUtils;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
@@ -27,8 +20,6 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import javax.annotation.Resource;
-
-import static javax.management.Query.eq;
 
 
 @Service("meetingsService")

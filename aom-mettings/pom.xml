@@ -81,7 +81,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.renren</groupId>
+            <groupId>com.furan</groupId>
             <artifactId>aom-admin</artifactId>
             <version>3.0.0</version>
         </dependency>
@@ -91,7 +91,7 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>io.renren</groupId>
+            <groupId>com.furan</groupId>
             <artifactId>aom-admin</artifactId>
             <version>3.0.0</version>
         </dependency>

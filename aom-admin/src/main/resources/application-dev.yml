@@ -75,4 +75,4 @@ dubbo:
         enable: false
         port: 33344
     scan:
-        base-packages: io.renren.modules
+        base-packages: com.furan.modules

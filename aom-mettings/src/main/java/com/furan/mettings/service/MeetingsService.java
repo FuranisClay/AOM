@@ -2,7 +2,7 @@ package com.furan.mettings.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.furan.mettings.entity.MeetingsEntity;
-import io.renren.common.utils.PageUtils;
+import com.furan.common.utils.PageUtils;
 
 import java.util.Map;
 

@@ -2,7 +2,7 @@ package com.furan.aommessage.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.furan.aommessage.entity.NewsEntity;
-import io.renren.common.utils.PageUtils;
+import com.furan.common.utils.PageUtils;
 
 import java.util.Map;
 

@@ -3,8 +3,8 @@ package com.furan.aommessage.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.R;
+import com.furan.common.utils.PageUtils;
+import com.furan.common.utils.R;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

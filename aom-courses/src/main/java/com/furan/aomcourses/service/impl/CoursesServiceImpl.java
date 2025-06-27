@@ -1,8 +1,8 @@
 package com.furan.aomcourses.service.impl;
 
 import com.furan.aomcommon.service.impl.RedissonServiceImpl;
-import io.renren.common.utils.PageUtils;
-import io.renren.common.utils.Query;
+import com.furan.common.utils.PageUtils;
+import com.furan.common.utils.Query;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.Map;
