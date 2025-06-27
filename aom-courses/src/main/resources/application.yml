@@ -7,7 +7,7 @@ server:
     connection-timeout: 5000ms
   port: 18113
 
-
+# here is ssx
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource

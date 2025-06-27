@@ -5,6 +5,7 @@ import java.util.Map;
 
 import io.renren.common.utils.PageUtils;
 import io.renren.common.utils.R;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,12 +61,10 @@ public class CoursesController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("aomcourses:courses:save")
-    public R save(@RequestBody CoursesEntity courses){
-		coursesService.save(courses);
-
+    public R save(@RequestBody CoursesEntity courses) {
+        coursesService.save(courses);
         return R.ok();
     }
-
     /**
      * 修改
      */
@@ -86,5 +85,20 @@ public class CoursesController {
 		coursesService.removeByIds(Arrays.asList(ids));
         return R.ok();
     }
+
+    @RequestMapping("/list/pending")
+    @RequiresPermissions("aomcourses:courses:list")
+    public R listPending(@RequestParam Map<String, Object> params) {
+        PageUtils page = coursesService.listJPending(params);
+        return R.ok().put("page", page);
+    }
+
+    @RequestMapping("/list/author")
+    @RequiresPermissions("aomcourses:courses:list")
+    public R listByAuthorId(@RequestParam Map<String, Object> params) {
+        PageUtils page = coursesService.queryPageByUserId(params);
+        return R.ok().put("page", page);
+    }
+
 
 }
