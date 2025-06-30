@@ -1,5 +1,6 @@
 package io.renren.common.utils;
 
+import com.furan.common.utils.DateUtils;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Date;

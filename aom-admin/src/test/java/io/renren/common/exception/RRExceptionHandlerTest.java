@@ -1,12 +1,14 @@
 package io.renren.common.exception;
 
+import com.furan.common.exception.RRException;
+import com.furan.common.exception.RRExceptionHandler;
+import com.furan.common.utils.R;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.apache.shiro.authz.AuthorizationException;
 import org.springframework.dao.DuplicateKeyException;
 import static org.junit.jupiter.api.Assertions.*;
-import io.renren.common.utils.R;
 
 class RRExceptionHandlerTest {
 
