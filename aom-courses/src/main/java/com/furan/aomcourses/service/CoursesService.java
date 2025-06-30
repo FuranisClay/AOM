@@ -2,7 +2,7 @@ package com.furan.aomcourses.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.furan.aomcourses.entity.CoursesEntity;
-import io.renren.common.utils.PageUtils;
+import com.furan.common.utils.PageUtils;
 
 import java.util.Map;
 
@@ -16,5 +16,9 @@ import java.util.Map;
 public interface CoursesService extends IService<CoursesEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    PageUtils listJPending(Map<String, Object> params);
+
+    PageUtils queryPageByUserId(Map<String, Object> params);
 }
 

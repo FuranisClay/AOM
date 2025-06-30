@@ -25,6 +25,10 @@ public class CoursesEntity implements Serializable {
 	@TableId
 	private Integer id;
 	/**
+	 * 用户ID
+	 */
+	private Long userId;
+	/**
 	 * 课程名称
 	 */
 	private String courseName;
@@ -49,7 +53,7 @@ public class CoursesEntity implements Serializable {
 	 */
 	private String author;
 	/**
-	 * 课程状态：0-禁用，1-启用
+	 * 课程状态：0-禁用，1-启用，-1-待审核,2-审核未通过
 	 */
 	private Integer status;
 	/**

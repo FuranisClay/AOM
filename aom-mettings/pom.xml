@@ -81,7 +81,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>io.renren</groupId>
+            <groupId>com.furan</groupId>
             <artifactId>aom-admin</artifactId>
             <version>3.0.0</version>
         </dependency>
@@ -89,6 +89,39 @@
             <groupId>com.furan</groupId>
             <artifactId>aom-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.furan</groupId>
+            <artifactId>aom-admin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>3.1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>3.1.4</version>
+        </dependency>
+        <!-- Apache Curator -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version> 5.1.0</version>  <!-- 或你用的版本，建议和dubbo版本兼容 -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-x-discovery</artifactId>
+            <version> 5.1.0</version>
         </dependency>
     </dependencies>
 

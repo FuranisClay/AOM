@@ -15,6 +15,9 @@
         <option value="$PROJECT_DIR$/aom-courses/pom.xml" />
         <option value="$PROJECT_DIR$/mettings/pom.xml" />
         <option value="$PROJECT_DIR$/aom-mettings/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-ai-rag-knowledge/aom-dev-tech-api/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-ai-rag-knowledge/pom.xml" />
+        <option value="$PROJECT_DIR$/aom-ai-rag-knowledge/aom-dev-tech-trigger/pom.xml" />
       </list>
     </option>
   </component>

@@ -73,3 +73,12 @@ redis:
       retry-interval: 1000
       ping-interval: 60000
       keep-alive: true
+
+dubbo:
+  application:
+    name: meetings-service
+  registry:
+    address: zookeeper://39.105.179.191:2181
+  consumer:
+    check: false
+

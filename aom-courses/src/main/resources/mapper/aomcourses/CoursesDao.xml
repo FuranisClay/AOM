@@ -6,6 +6,7 @@
 	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.furan.aomcourses.entity.CoursesEntity" id="coursesMap">
         <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
         <result property="courseName" column="course_name"/>
         <result property="courseCover" column="course_cover"/>
         <result property="courseDescription" column="course_description"/>

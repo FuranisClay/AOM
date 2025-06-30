@@ -61,3 +61,18 @@ spring:
                 max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
                 max-idle: 10      # 连接池中的最大空闲连接
                 min-idle: 5       # 连接池中的最小空闲连接
+
+
+dubbo:
+    application:
+        name: aom-admin
+    registry:
+        address: zookeeper://39.105.179.191:2181
+    protocol:
+        name: dubbo
+        port: 20888
+    qos:
+        enable: false
+        port: 33344
+    scan:
+        base-packages: com.furan.modules

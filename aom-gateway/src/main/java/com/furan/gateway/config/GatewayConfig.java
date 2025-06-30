@@ -30,7 +30,6 @@ public class GatewayConfig {
                 .route("aom-admin", r -> r
                         .path("/**")
                         .uri("http://localhost:18111"))
-
                 .build();
     }
 }

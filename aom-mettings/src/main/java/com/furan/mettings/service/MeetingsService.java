@@ -2,7 +2,7 @@ package com.furan.mettings.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.furan.mettings.entity.MeetingsEntity;
-import io.renren.common.utils.PageUtils;
+import com.furan.common.utils.PageUtils;
 
 import java.util.Map;
 
@@ -16,5 +16,8 @@ import java.util.Map;
 public interface MeetingsService extends IService<MeetingsEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+    PageUtils listJPending(Map<String, Object> params);
+    PageUtils queryPageByUserId(Map<String, Object> params);
+    PageUtils queryPageByTime(Map<String, Object> params);
 }
 
