@@ -1,3 +1,8 @@
+# Ai模块部署方案
+
+启动docker-compose脚本并根据实际情况更改application.yml 配置文件
+
+```text
 # docker-comopse -f docker-compose-environment.yml up -d
 
 version: '3'
@@ -93,3 +98,10 @@ services:
 networks:
   my-network:
     driver: bridge
+```
+
+
+
+# 其他模块
+
+运行 load maven project并修改配置文件
