@@ -1,16 +1,20 @@
-# Ai模块部署方案
-启动docker-compose脚本并根据实际情况更改application.yml 配置文件
-
-···
 # docker-comopse -f docker-compose-environment.yml up -d
+
 version: '3'
 services:
+
   # 对话模型
+
   # ollama pull deepseek-r1:1.5b
+
   # 运行模型
+
   # ollama run deepseek-r1:1.5b
+
   # 联网模型
+
   # ollama pull nomic-embed-text
+
   ollama:
     image: ollama/ollama:0.5.10
     container_name: ollama
@@ -35,27 +39,31 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
+
   # RedisAdmin https://github.com/joeferner/redis-commander
+
   # 账密 admin/admin
+
   redis-admin:
     image: spryker/redis-commander:0.8.0
     container_name: redis-admin
     hostname: redis-commander
     restart: always
     ports:
-      - 8081:8081
-    environment:
-      - REDIS_HOSTS=local:redis:6379
-      - HTTP_USER=admin
-      - HTTP_PASSWORD=admin
-      - LANG=C.UTF-8
-      - LANGUAGE=C.UTF-8
-      - LC_ALL=C.UTF-8
-    networks:
-      - my-network
-    depends_on:
-      redis:
-        condition: service_healthy
+
+   - 8081:8081
+     vironment:
+        - REDIS_HOSTS=local:redis:6379
+          HTTP_USER=admin
+             - HTTP_PASSWORD=admin
+               LANG=C.UTF-8
+                  - LANGUAGE=C.UTF-8
+                    LC_ALL=C.UTF-8
+                        networks:
+                       - my-network
+                         pends_on:
+                               redis:
+                         condition: service_healthy
 
   vector_db:
     image: ankane/pgvector:v0.5.0
@@ -85,7 +93,3 @@ services:
 networks:
   my-network:
     driver: bridge
-
-···text
-# 其他模块
-运行 load maven project并修改配置文件
