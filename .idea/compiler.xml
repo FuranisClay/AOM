@@ -16,11 +16,11 @@
         <module name="aom-courses" />
         <module name="aom-dev-tech-app" />
         <module name="aom-common" />
-        <module name="renren-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="furan-gateway" target="1.8" />
+      <module name="renren-generator" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
